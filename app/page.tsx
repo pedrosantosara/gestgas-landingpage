@@ -204,7 +204,7 @@ export default function LandingPage() {
 
             <div className="text-center mt-10">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Criar conta grátis
+                Assinar Agora 
               </Button>
             </div>
           </div>
