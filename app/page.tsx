@@ -18,6 +18,7 @@ import {
   CheckCircle2,
 } from "lucide-react"
 import Image from "next/image"
+import { ParallaxIcon } from "@/components/parallax-icon"
 
 export default function LandingPage() {
   return (
@@ -99,29 +100,117 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="border-y border-border/20 bg-muted/10">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">95%</div>
-              <div className="text-sm text-muted-foreground">Redução de erros</div>
+      <section id="excel-problemas" className="bg-[#0E2238] py-20 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center mb-4">
+              <Badge className="bg-primary/10 text-primary border-primary/20">Sem Planilhas</Badge>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">3h</div>
-              <div className="text-sm text-muted-foreground">Economizadas por dia</div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 text-balance">
+              Você ainda usa planilhas do
+              <span className="inline-flex items-center gap-2 mx-2 align-middle">
+                <Image src="/excel.svg" alt="Excel" width={32} height={32} />
+                <span>Excel</span>
+              </span>
+              para gerenciar sua revendedora?
+            </h2>
+            <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
+              Se você controla estoque, vendas e entregas em planilhas, provavelmente enfrenta um destes problemas todos os dias:
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="p-6 bg-white/5 border-white/10 hover:border-primary/40 transition-colors">
+              <h3 className="text-xl font-semibold text-white mb-2">Perdeu vendas por falta de estoque?</h3>
+              <p className="text-white/80 leading-relaxed">
+                Cliente liga e você não sabe se tem botijas. Depois descobre que tinha estoque parado. Perdas por falta de visibilidade.
+              </p>
+            </Card>
+            <Card className="p-6 bg-white/5 border-white/10 hover:border-primary/40 transition-colors">
+              <h3 className="text-xl font-semibold text-white mb-2">Gasta horas atualizando planilhas?</h3>
+              <p className="text-white/80 leading-relaxed">
+                2–3 horas por dia digitando vendas, ajustes de estoque e conferências. Tempo que poderia virar crescimento.
+              </p>
+            </Card>
+            <Card className="p-6 bg-white/5 border-white/10 hover:border-primary/40 transition-colors">
+              <h3 className="text-xl font-semibold text-white mb-2">Erros de cálculo custam dinheiro?</h3>
+              <p className="text-white/80 leading-relaxed">
+                Uma fórmula errada e você vende no prejuízo por semanas. E as vendas fiadas? Somem em planilhas soltas.
+              </p>
+            </Card>
+            <Card className="p-6 bg-white/5 border-white/10 hover:border-primary/40 transition-colors">
+              <h3 className="text-xl font-semibold text-white mb-2">Não sabe onde estão seus entregadores?</h3>
+              <p className="text-white/80 leading-relaxed">
+                O cliente espera há horas e você não sabe se o entregador já saiu ou quantas entregas faltam.
+              </p>
+            </Card>
+            <Card className="p-6 bg-white/5 border-white/10 hover:border-primary/40 transition-colors">
+              <h3 className="text-xl font-semibold text-white mb-2">Vendas fiadas viraram um caos?</h3>
+              <p className="text-white/80 leading-relaxed">
+                Anotações em cadernos e planilhas diferentes. Quem deve, quanto deve e há quanto tempo?
+              </p>
+            </Card>
+            <Card className="p-6 bg-white/5 border-white/10 hover:border-primary/40 transition-colors">
+              <h3 className="text-xl font-semibold text-white mb-2">Nota fiscal é um pesadelo?</h3>
+              <p className="text-white/80 leading-relaxed">
+                Emitir NF-e e NFC-e em sistemas separados, retrabalho e risco de ficar irregular.
+              </p>
+            </Card>
+          </div>
+
+          
+        </div>
+      </section>
+
+      <section id="porque-gestgas" className="bg-muted/10 py-20 md:py-32">
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+              Foi exatamente por viver os mesmos problemas que você que decidimos criar o GestGAS
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Uma ferramenta pensada para revendedoras brasileiras que precisam controlar estoque, entregas, vendas e notas fiscais
+              sem planilhas, sem retrabalho e sem sistemas caros que não foram feitos para o seu negócio.
+            </p>
+          </div>
+
+          <div className="hidden md:block">
+            <ParallaxIcon className="absolute left-0 top-[2px] rotate-15 w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 shadow-md flex items-center justify-center z-20 pointer-events-none" speed={0.09} sectionId="porque-gestgas">
+              <Truck className="w-5 h-5 text-primary" />
+            </ParallaxIcon>
+            <ParallaxIcon className="absolute right-0 top-[22px] rotate-10 w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 shadow-md flex items-center justify-center z-20 pointer-events-none" speed={0.12} sectionId="porque-gestgas">
+              <Package className="w-5 h-5 text-primary" />
+            </ParallaxIcon>
+            <ParallaxIcon className="absolute left-[2%] top-[58px] w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 shadow-md flex items-center justify-center z-20 pointer-events-none" speed={0.1} sectionId="porque-gestgas">
+              <Shield className="w-5 h-5 text-primary" />
+            </ParallaxIcon>
+            <ParallaxIcon className="absolute right-[2%] top-[77px] w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 shadow-md flex items-center justify-center z-20 pointer-events-none" speed={0.13} sectionId="porque-gestgas">
+              <Zap className="w-5 h-5 text-primary" />
+            </ParallaxIcon>
+          </div>
+
+          <div className="relative max-w-5xl mx-auto">
+            <div className="rounded-2xl border border-border bg-card shadow-xl overflow-hidden">
+              <Image
+                src="/sistema.png"
+                alt="Captura de tela do GestGAS"
+                width={1600}
+                height={900}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+                priority
+              />
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">100%</div>
-              <div className="text-sm text-muted-foreground">Controle em tempo real</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">24/7</div>
-              <div className="text-sm text-muted-foreground">Suporte disponível</div>
+
+
+            <div className="text-center mt-10">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                Criar conta grátis
+              </Button>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Features Section */}
       <section id="funcionalidades" className="container mx-auto px-4 py-20 md:py-32">
