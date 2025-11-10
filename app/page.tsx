@@ -19,6 +19,7 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 import { ParallaxIcon } from "@/components/parallax-icon"
+import { SupportFloat } from "@/components/support-float"
 
 export default function LandingPage() {
   return (
@@ -64,9 +65,11 @@ export default function LandingPage() {
             <a href="#precos" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Preços
             </a>
-            <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              Começar Agora
-            </Button>
+            <a href="#precos" aria-label="Ir para Planos">
+              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                Começar Agora
+              </Button>
+            </a>
           </nav>
         </div>
       </header>
@@ -203,9 +206,11 @@ export default function LandingPage() {
 
 
             <div className="text-center mt-10">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Assinar Agora 
-              </Button>
+              <a href="#precos" aria-label="Ir para preços">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8 py-6">
+                  Assinar Agora 
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -503,6 +508,72 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Tutorial Videos Section */}
+      <section id="tutoriais" className="container mx-auto px-4 py-20 md:py-32">
+        <div className="text-center mb-16">
+          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Vídeos Tutoriais</Badge>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+            Aprenda a usar o GestGAS
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+            Passo a passo com vídeos curtos para configurar e dominar o sistema.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Vídeo: Configuração Inicial */}
+          <Card className="p-0 bg-card border-border overflow-hidden">
+            <div className="aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="Configuração Inicial"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <div className="p-4">
+              <h3 className="text-base font-semibold text-foreground mb-1">Configuração inicial</h3>
+              <p className="text-sm text-muted-foreground">Crie sua conta, defina dados da revendedora e cadastre produtos.</p>
+            </div>
+          </Card>
+
+          {/* Vídeo: Pedidos e Entregas */}
+          <Card className="p-0 bg-card border-border overflow-hidden">
+            <div className="aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="Pedidos e Entregas"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <div className="p-4">
+              <h3 className="text-base font-semibold text-foreground mb-1">Pedidos e Entregas</h3>
+              <p className="text-sm text-muted-foreground">Como registrar pedidos, despachar e acompanhar entregas em tempo real.</p>
+            </div>
+          </Card>
+
+          {/* Vídeo: Notas Fiscais */}
+          <Card className="p-0 bg-card border-border overflow-hidden">
+            <div className="aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="Notas Fiscais"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <div className="p-4">
+              <h3 className="text-base font-semibold text-foreground mb-1">Notas fiscais</h3>
+              <p className="text-sm text-muted-foreground">Emitindo NF-e e NFC-e sem complicação diretamente pelo sistema.</p>
+            </div>
+          </Card>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section id="precos" className="container mx-auto px-4 py-20 md:py-32">
         <div className="text-center mb-16">
@@ -762,6 +833,7 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
+      <SupportFloat />
     </div>
   )
 }
